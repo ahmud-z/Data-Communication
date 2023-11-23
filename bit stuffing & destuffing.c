@@ -5,17 +5,13 @@ void bitStuffing(int arr[], int sz)
 {
 
     int resultArr[30];
-
-
     int i,j = 0;
     int k;
 
     int count = 1;
 
-
     while(i<sz)
     {
-
         if (arr[i] == 1)
         {
             resultArr[j] = arr[i];
@@ -42,10 +38,12 @@ void bitStuffing(int arr[], int sz)
         j++;
     }
 
+    printf("\nResult Array: \n");
     for(int x = 0; x<j; x++)
     {
         printf("%d ",resultArr[x]);
     }
+    printf("\n");
 }
 
 
@@ -59,7 +57,6 @@ void bitDeStuffing(int arr[], int sz)
 
     while(i<sz)
     {
-
         if (arr[i] == 1)
         {
             deStuffArr[j] = arr[i];
@@ -84,27 +81,60 @@ void bitDeStuffing(int arr[], int sz)
         i++;
         j++;
     }
+
+    printf("\nResult Array: \n");
     for(int x = 0; x<j; x++)
     {
         printf("%d ", deStuffArr[x]);
     }
-
+    printf("\n");
 }
+
 
 int main()
 {
-    int sz = 7;
-    int arr[] = {1, 1, 1, 1, 1, 0, 1};
+    int sz;
 
-    bitDeStuffing(arr,sz);
+    printf("Enter array size: ");
+    scanf("%d",&sz);
+
+    int arr[sz];
+
+    printf("Enter array elements: ");
+
+    for(int i = 0; i<sz; i++)
+    {
+        scanf("%d",&arr[i]);
+    }
 
     int choice;
 
+    do
+    {
+        printf("\n1.Stuffing\n2.deStuffing\n0.exit\n");
+        printf("Enter your Choice: ");
+        scanf("%d",&choice);
 
-    do{
-        printf("Enter choice")
+
+        switch(choice)
+        {
+        case 0:
+            return 0;
+            break;
+
+        case 1:
+            bitStuffing(arr,sz);
+            break;
+
+        case 2:
+            bitDeStuffing(arr,sz);
+            break;
+
+        default:
+            printf("Invalid input");
+        }
     }
-
+    while(choice!=0);
 
     return 0;
 }
