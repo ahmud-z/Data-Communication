@@ -28,20 +28,14 @@ void Convert_Into_BinaryConvert(int num)
         num = num/2;
     }
 
-
     printResult(resultArray, 8);
 }
 
-
-
-
 int main()
 {
-
     int a,b,c,d;
 
-
-    cout<<"Enter a Dotted IPV4 Address: ";
+    cout<<"Enter a Dotted (Decimal) IPV4 Address: ";
     scanf("%d.%d.%d.%d.", &a, &b, &c, &d);
 
     int addressArray[] = {a, b, c, d};
@@ -54,9 +48,6 @@ int main()
         Convert_Into_BinaryConvert(addressArray[i]);
     }
 
-
-
     cout<<endl;
-
     return 0;
 }
