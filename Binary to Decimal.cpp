@@ -2,13 +2,15 @@
 #include <cmath>
 using namespace std;
 
-int main()
+void printResult(int sum)
 {
-    int num;
-    int sum = 0;
+    cout<<endl;
+    cout<<"Decimal of given binary: "<<sum<<endl;
+}
 
-    cout<<"Enter a binary number: ";
-    cin>>num;
+void convertIntoDecimal(int num)
+{
+    int sum = 0;
 
     int x = 0;
     int powerResult = 0;
@@ -25,9 +27,18 @@ int main()
         num = num/10;
     }
 
+    printResult(sum);
+}
 
-    cout<<endl;
-    cout<<"Decimal of given binary: "<<sum<<endl;
+
+int main()
+{
+    int num;
+
+    cout<<"Enter a binary number: ";
+    cin>>num;
+
+    convertIntoDecimal(num);
 
     return 0;
 }
