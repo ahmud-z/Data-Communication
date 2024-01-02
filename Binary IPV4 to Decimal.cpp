@@ -32,7 +32,7 @@ int main()
 {
     int a,b,c,d;
 
-    cout<<"Enter an 32 bit address: ";
+    cout<<"Enter an 32 bit Dotted Binray address (e.g. 10101101.): ";
     scanf("%d.%d.%d.%d", &a, &b, &c, &d);
 
     int arr[] = {a, b, c, d};
