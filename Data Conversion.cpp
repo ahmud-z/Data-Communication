@@ -75,6 +75,53 @@ void convertIPV4ToBinary(int num)
     printResult(resultArray, 8);
 }
 
+void convertIntoBinary(int num)
+{
+    int sum = 0;
+    int x = 0;
+    int powerResult = 0;
+    int temp = 0;
+
+    while(num!=0)
+    {
+        int powerResult = pow(2, x);
+
+        int temp = num%2;
+        sum += (temp * powerResult);
+
+        x++;
+        powerResult = 0;
+        num = num/10;
+        temp++;
+    }
+
+    cout<<sum;
+    sum = 0;
+}
+
+void binaryIPV4_to_DecimalIPV4()
+{
+    int a,b,c,d;
+
+    cout<<"Enter an 32 bit address: ";
+    scanf("%d.%d.%d.%d", &a, &b, &c, &d);
+
+    int arr[] = {a, b, c, d};
+
+    cout<<"Decimal address of given IPV4 address: ";
+    for(int i = 0; i<4; i++)
+    {
+        convertIntoBinary(arr[i]);
+        if(i != 3)
+        {
+            cout<<".";
+        }
+    }
+    cout<<endl;
+    cout<<endl;
+}
+
+
 
 void clearScreen()
 {
@@ -97,7 +144,8 @@ int main()
         cout<<"2. Binary to Decimal"<<endl;
         cout<<"3. Decimal IPV4 to Binary 32 bit Address"<<endl;
         cout<<"4. 32 bit Binary Address to Decimal Address"<<endl;
-        cout<<"5. Clear Screen"<<endl;
+        cout<<"5. Parity Check"<<endl;
+        cout<<"6. Clear Screen"<<endl;
         cout<<"0. exit\n"<<endl;
 
         cout<<"Enter your Choice: ";
@@ -144,10 +192,10 @@ int main()
             break;
 
         case 4:
-
+                binaryIPV4_to_DecimalIPV4();
             break;
 
-        case 5:
+        case 6:
             clearScreen();
             break;
 
